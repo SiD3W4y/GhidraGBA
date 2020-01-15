@@ -20,7 +20,6 @@ import java.util.*;
 
 import ghidra.app.util.Option;
 import ghidra.app.util.bin.ByteProvider;
-import ghidra.app.util.importer.MemoryConflictHandler;
 import ghidra.app.util.importer.MessageLog;
 import ghidra.app.util.opinion.AbstractLibrarySupportLoader;
 import ghidra.app.util.opinion.LoadSpec;
@@ -67,7 +66,7 @@ public class GhidraGBALoader extends AbstractLibrarySupportLoader {
 
 	@Override
 	protected void load(ByteProvider provider, LoadSpec loadSpec, List<Option> options,
-			Program program, MemoryConflictHandler handler, TaskMonitor monitor, MessageLog log)
+			Program program, TaskMonitor monitor, MessageLog log)
 			throws CancelledException, IOException {
 		Memory mem = program.getMemory();
 		FlatProgramAPI api = new FlatProgramAPI(program);
