@@ -75,6 +75,7 @@ public class GhidraGBALoader extends AbstractLibrarySupportLoader {
 			mem.createUninitializedBlock("WRAM", api.toAddr(0x2000000), 0x40000, false).setExecute(true);
 			mem.createUninitializedBlock("IRAM", api.toAddr(0x3000000), 0x08000, false).setExecute(true);
 			mem.createUninitializedBlock("IO", api.toAddr(0x4000000), 0x003ff, false).setWrite(true);
+			mem.createUninitializedBlock("PAL", api.toAddr(0x5000000), 0x00400, false).setWrite(true);
 			mem.createUninitializedBlock("VRAM", api.toAddr(0x6000000), 0x18000, false).setExecute(true);
 			mem.createUninitializedBlock("OBJ", api.toAddr(0x7000000), 0x400, false).setExecute(true);
 			mem.createInitializedBlock("ROM", api.toAddr(0x8000000), provider.getInputStream(0), 0x1000000, monitor, false).setExecute(true);
